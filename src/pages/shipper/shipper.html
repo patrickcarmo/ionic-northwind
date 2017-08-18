@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Shipper List
+    </ion-title>
+
+    <button menuToggle ion-button color="primary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let shipper of shippers" >
+
+      <ion-item (click)="edit(shipper)">
+        <h2>{{ shipper.companyName }}</h2>
+        <p>{{ shipper.phone }}</p>
+      </ion-item>
+
+      <ion-item-options>
+        <button ion-button color="danger" (click)="delete(shipper)"><ion-icon name="trash"></ion-icon>Delete</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab bottom center padding>
+    <button ion-fab (click)="insert()">
+      <ion-icon name="add">  </ion-icon>
+      </button>
+  </ion-fab>
+
+</ion-content>
