@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -15,13 +14,18 @@ import { HttpModule } from '@angular/http';
 
 import { ShipperService } from './../providers/shipper/shipper';
 import { ModalShipperPage } from './../pages/modal-shipper/modal-shipper';
+
+import { SupplierPage } from './../pages/supplier/supplier';
+import { SupplierService } from '../providers/supplier/supplier';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
     ShipperPage,
-    ModalShipperPage
+    ModalShipperPage,
+    SupplierPage
   ],
   imports: [
     BrowserModule,
@@ -34,13 +38,15 @@ import { ModalShipperPage } from './../pages/modal-shipper/modal-shipper';
     HomePage,
     ListPage,
     ShipperPage,
-    ModalShipperPage
+    ModalShipperPage,
+    SupplierPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ShipperService
+    ShipperService,
+    SupplierService
   ]
 })
 export class AppModule {}

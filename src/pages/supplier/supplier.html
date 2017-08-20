@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Supplier List
+    </ion-title>
+
+    <button menuToggle ion-button color="primary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let supplier of suppliers">
+
+      <ion-item (click)="edit(supplier)">
+        <h2>{{ supplier.companyName }}</h2>
+        <p>{{ supplier.contactName }} - {{supplier.contactTitle}}</p>
+      </ion-item>
+
+      <ion-item-options>
+        <button ion-button color="danger" (click)="delete(supplier)"><ion-icon name="trash"></ion-icon>Delete</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab bottom center padding>
+    <button ion-fab (click)="insert()">
+      <ion-icon name="add">  </ion-icon>
+      </button>
+  </ion-fab>
+
+</ion-content>
